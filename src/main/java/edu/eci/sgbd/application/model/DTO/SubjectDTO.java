@@ -1,4 +1,4 @@
-package edu.eci.sgbd.application.DTO;
+package edu.eci.sgbd.application.model.DTO;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

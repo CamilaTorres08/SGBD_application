@@ -1,7 +1,6 @@
 package edu.eci.sgbd.application.controller;
 
-import edu.eci.sgbd.application.DTO.StudentDTO;
-import edu.eci.sgbd.application.mapper.Mapper;
+import edu.eci.sgbd.application.model.DTO.StudentDTO;
 import edu.eci.sgbd.application.model.Student;
 import edu.eci.sgbd.application.service.StudentService;
 import jakarta.validation.Valid;
@@ -34,14 +33,14 @@ public class StudentController {
 
     @PostMapping
     public ResponseEntity<String> create(@Valid @RequestBody StudentDTO s){
-        Student student = Mapper.toStudent(s);
+        Student student = toStudent(s);
         studentService.create(student);
         return ResponseEntity.ok("Student created successfully");
     }
 
     @PutMapping("{id}")
     public ResponseEntity<String> update(@PathVariable int id, @Valid @RequestBody StudentDTO s){
-        Student student = Mapper.toStudent(s);
+        Student student = toStudent(s);
         studentService.update(id,student);
         return ResponseEntity.ok("Student updated successfully");
     }
@@ -50,6 +49,15 @@ public class StudentController {
     public ResponseEntity<String> delete(@PathVariable int id){
         studentService.delete(id);
         return ResponseEntity.ok("Student deleted sucessfully");
+    }
+
+    private Student toStudent(StudentDTO dto){
+        Student e = new Student();
+        e.setName(dto.getName());
+        e.setCity(dto.getCity());
+        e.setEmail(dto.getEmail());
+        e.setBirthDate(dto.getBirthDate());
+        return e;
     }
 
 }

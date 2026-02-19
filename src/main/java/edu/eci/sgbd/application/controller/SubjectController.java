@@ -1,7 +1,6 @@
 package edu.eci.sgbd.application.controller;
 
-import edu.eci.sgbd.application.DTO.SubjectDTO;
-import edu.eci.sgbd.application.mapper.Mapper;
+import edu.eci.sgbd.application.model.DTO.SubjectDTO;
 import edu.eci.sgbd.application.model.Subject;
 import edu.eci.sgbd.application.service.SubjectService;
 import jakarta.validation.Valid;
@@ -33,14 +32,14 @@ public class SubjectController {
 
     @PostMapping
     public ResponseEntity<String> create(@Valid @RequestBody SubjectDTO s){
-        Subject subject = Mapper.toSubject(s);
+        Subject subject = toSubject(s);
         subjectService.create(subject);
         return ResponseEntity.ok("Subject created successfully");
     }
 
     @PutMapping("{id}")
     public ResponseEntity<String> update(@PathVariable int id, @Valid @RequestBody SubjectDTO s){
-        Subject subject = Mapper.toSubject(s);
+        Subject subject = toSubject(s);
         subjectService.update(id,subject);
         return ResponseEntity.ok("Subject updated successfully");
     }
@@ -49,5 +48,13 @@ public class SubjectController {
     public ResponseEntity<String> delete(@PathVariable int id){
         subjectService.delete(id);
         return ResponseEntity.ok("Subject deleted sucessfully");
+    }
+
+    private Subject toSubject(SubjectDTO dto){
+        Subject s = new Subject();
+        s.setName(dto.getName());
+        s.setCredits(dto.getCredits());
+        s.setDepartment(dto.getDepartment());
+        return s;
     }
 }
