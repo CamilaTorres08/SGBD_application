@@ -1,0 +1,262 @@
+{
+  "info": {
+    "_postman_id": "c36ebfc2-adf4-42d4-92fb-6a6bd9251227",
+    "name": "Aplicación SGBD Parte 1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44960677"
+  },
+  "item": [
+    {
+      "name": "Estudiantes",
+      "item": [
+        {
+          "name": "Obtener todos los estudiantes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/students",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "students"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener un estudiante",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/students/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "students",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear estudiante",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Andres Casanova\",\r\n  \"email\": \"andres@gmail.com\",\r\n  \"birthDate\": \"2000-04-12\",\r\n  \"city\": \"Bogota\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/students",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "students"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar estudiante",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Andres Casanova\",\r\n  \"email\": \"andres@gmail.com\",\r\n  \"birthDate\": \"2000-04-12\",\r\n  \"city\": \"Medellin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/students/21",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "students",
+                "21"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar estudiante",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/students/21",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "students",
+                "21"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Materias",
+      "item": [
+        {
+          "name": "Obtener todas las materias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/subjects",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "subjects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener una materia",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/subjects/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "subjects",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear materia",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Calculo vectorial\",\r\n    \"credits\": 4,\r\n    \"department\": \"Matemáticas\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/subjects",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "subjects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar materia",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Calculo vectorial\",\r\n    \"credits\": 3,\r\n    \"department\": \"Matemáticas\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/subjects/21",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "subjects",
+                "21"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar materia",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/subjects/21",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "subjects",
+                "21"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
