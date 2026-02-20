@@ -2,7 +2,6 @@ package edu.eci.sgbd.application.controller;
 
 import edu.eci.sgbd.application.model.Classroom;
 import edu.eci.sgbd.application.service.ClassroomService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,13 +30,13 @@ public class ClassroomController {
     }
 
     @PostMapping
-    public ResponseEntity<String> create(@Valid @RequestBody Classroom classroom) {
+    public ResponseEntity<String> create(@RequestBody Classroom classroom) {
         classroomService.create(classroom);
         return ResponseEntity.ok("Classroom created successfully");
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<String> update(@PathVariable int id, @Valid @RequestBody Classroom classroom) {
+    public ResponseEntity<String> update(@PathVariable int id, @RequestBody Classroom classroom) {
         classroomService.update(id, classroom);
         return ResponseEntity.ok("Classroom updated successfully");
     }

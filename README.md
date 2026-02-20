@@ -18,6 +18,8 @@ Esta aplicación permite gestionar estudiantes, materias, salones e inscripcione
 
 ## Modelo de Datos
 
+<img src="modelo.jpeg">
+
 ### Entidades Principales
 
 1. **Estudiantes** (`Estudiantes`)

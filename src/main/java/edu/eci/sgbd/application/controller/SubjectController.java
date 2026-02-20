@@ -1,9 +1,7 @@
 package edu.eci.sgbd.application.controller;
 
-import edu.eci.sgbd.application.model.DTO.SubjectDTO;
 import edu.eci.sgbd.application.model.Subject;
 import edu.eci.sgbd.application.service.SubjectService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,15 +29,13 @@ public class SubjectController {
     }
 
     @PostMapping
-    public ResponseEntity<String> create(@Valid @RequestBody SubjectDTO s){
-        Subject subject = toSubject(s);
+    public ResponseEntity<String> create(@RequestBody Subject subject){
         subjectService.create(subject);
         return ResponseEntity.ok("Subject created successfully");
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<String> update(@PathVariable int id, @Valid @RequestBody SubjectDTO s){
-        Subject subject = toSubject(s);
+    public ResponseEntity<String> update(@PathVariable int id, @RequestBody Subject subject){
         subjectService.update(id,subject);
         return ResponseEntity.ok("Subject updated successfully");
     }
@@ -48,13 +44,5 @@ public class SubjectController {
     public ResponseEntity<String> delete(@PathVariable int id){
         subjectService.delete(id);
         return ResponseEntity.ok("Subject deleted sucessfully");
-    }
-
-    private Subject toSubject(SubjectDTO dto){
-        Subject s = new Subject();
-        s.setName(dto.getName());
-        s.setCredits(dto.getCredits());
-        s.setDepartment(dto.getDepartment());
-        return s;
     }
 }

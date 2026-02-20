@@ -2,7 +2,6 @@ package edu.eci.sgbd.application.controller;
 
 import edu.eci.sgbd.application.model.Enrollment;
 import edu.eci.sgbd.application.service.EnrollmentService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,13 +45,13 @@ public class EnrollmentController {
     }
 
     @PostMapping
-    public ResponseEntity<String> create(@Valid @RequestBody Enrollment enrollment) {
+    public ResponseEntity<String> create(@RequestBody Enrollment enrollment) {
         enrollmentService.create(enrollment);
         return ResponseEntity.ok("Enrollment created successfully");
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<String> update(@PathVariable int id, @Valid @RequestBody Enrollment enrollment) {
+    public ResponseEntity<String> update(@PathVariable int id, @RequestBody Enrollment enrollment) {
         enrollmentService.update(id, enrollment);
         return ResponseEntity.ok("Enrollment updated successfully");
     }
