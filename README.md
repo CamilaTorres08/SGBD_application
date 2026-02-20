@@ -47,6 +47,6 @@ DB_USER=tu_usuario
 DB_PASS=tu_contraseña
 ```
 
-## 🧪 Pruebas
+## Pruebas
 
 Se incluye una colección de Postman (`Aplicación SGBD Parte 1.postman_collection.json`) con todas las operaciones disponibles. Importar en Postman para realizar pruebas.
