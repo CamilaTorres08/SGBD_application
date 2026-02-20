@@ -2,7 +2,7 @@
 
 API REST para la gestión de un sistema académico desarrollada con Spring Boot y SQL Server.
 
-## 📋 Descripción
+## Descripción
 
 Esta aplicación permite gestionar estudiantes, materias, salones e inscripciones de un sistema académico. Implementa operaciones CRUD completas para todas las entidades y utiliza **JdbcTemplate** en lugar de JPA para el manejo de la base de datos.
 
